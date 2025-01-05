@@ -1,0 +1,32 @@
+Managing the webMethods Integration Server v11_00
+
+
+Integration Server Directory:
+
+/Applications/wMServiceDesigner/IntegrationServer
+
+* Note starting using bash since we're in zsh shell
+
+Starting the integration server:
+
+Change directory to the following:
+
+/Applications/wMServiceDesigner/IntegrationServer/bin
+
+** sudo /bin/bash /Applications/wMServiceDesigner/IntegrationServer/bin/startup.sh
+
+To stop the integration server, use the following:
+
+** sudo /bin/bash /Applications/wMServiceDesigner/IntegrationServer/bin/shutdown.sh
+
+or from the Administrator application, choose Server control icon > Shutdown or restart > choose the desired Shut Down or Restart option, then select the Shut Down button.
+
+* Note that since bash and zsh are very close in functionality, using the zsh shell seems to work as expected. 
+
+** Since zsh and bash are so close in functionality, it appears that the /bin/bash is not really required, nor is it required to change the default shell to /bin/bash. 
+
+There are alternatives to the startup.sh script in the bin directory.  It is also possible to start the IS using the server.sh script, then 
+
+ctrl-z, bg
+
+but it had been so long since we'd run the IS that we'd forgotten about the startup.sh.
