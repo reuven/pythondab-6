@@ -1,1 +1,2 @@
 I'm adding to this new file
+Faan now changed myfile and will cause merge conflict that will need to be resolved before able to merge to main branch :)
