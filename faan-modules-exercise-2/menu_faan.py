@@ -13,8 +13,14 @@
 # arguments as a list of strings.  Pass those strings to the "menu" function, and ask the user to choose from among them.
 # Print the user's choice.
 
-import sys
+"""
+This module provides an interactive menu function.
 
+Functions:
+- menu(*args): Repeatedly prompts the user to select an option from a list of string arguments. Returns the selected option when valid input is provided.
+
+If run as a script, this module will do nothing.
+"""
 
 def menu(*args):
   while True:
@@ -27,5 +33,4 @@ def menu(*args):
 
 
 if __name__ == '__main__':
-  selection = menu('a', 'b', 'c')
-  print(f'You selected {selection}')
+  pass
