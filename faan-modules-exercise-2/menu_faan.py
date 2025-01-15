@@ -23,14 +23,24 @@ If run as a script, this module will do nothing.
 """
 
 def menu(*args):
-  while True:
-    user_selection = input(f"Select one of: {args} : ").strip()
-    if user_selection in args:
-      return user_selection
-    else:
-      print(f'{user_selection} not found.')
-      continue
+    """
+    Repeatedly prompts the user to choose from a list of provided arguments.
+
+    Args:
+        *args: Arbitrary string arguments representing the menu options.
+
+    Returns:
+        str: The selected option that matches one of the provided arguments.
+    """
+    while True:
+        user_selection = input(f"Select one of: {args} : ").strip()
+        if user_selection in args:
+            return user_selection
+        else:
+            print(f'{user_selection} not found.')
+            continue
 
 
 if __name__ == '__main__':
-  pass
+    pass
+
