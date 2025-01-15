@@ -24,6 +24,8 @@ If run as a script:
 - Allows command-line arguments using "sys.argv" to override predefined options for a dynamic menu.
 """
 
+import sys
+
 
 def menu(*args):
   """
@@ -45,5 +47,14 @@ def menu(*args):
 
 
 if __name__ == '__main__':
-  user_selection = menu('a', 'b', 'c')
+  # Get command-line arguments (excluding script name)
+  arguments = sys.argv[1:]
+  if not arguments or '-h' in arguments or '--help' in arguments:
+    print(
+      "Usage: python menu.py [OPTIONS]\n\nOPTIONS:\n  Provide a list of choices as command-line arguments.\n  Example: python menu.py option1 option2 option3\n\n  Use -h or --help to display this help message.")
+    sys.exit(1)
+
+  # Pass command-line arguments to the menu function
+  user_selection = menu(*arguments)
+
   print(f'You selected: {user_selection}')
