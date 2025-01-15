@@ -19,28 +19,31 @@ This module provides an interactive menu function.
 Functions:
 - menu(*args): Repeatedly prompts the user to select an option from a list of string arguments. Returns the selected option when valid input is provided.
 
-If run as a script, this module will do nothing.
+If run as a script:
+- Initially asks the user to select between predefined options ('a', 'b', 'c').
+- Allows command-line arguments using "sys.argv" to override predefined options for a dynamic menu.
 """
 
+
 def menu(*args):
-    """
-    Repeatedly prompts the user to choose from a list of provided arguments.
+  """
+  Repeatedly prompts the user to choose from a list of provided arguments.
 
-    Args:
-        *args: Arbitrary string arguments representing the menu options.
+  Args:
+      *args: Arbitrary string arguments representing the menu options.
 
-    Returns:
-        str: The selected option that matches one of the provided arguments.
-    """
-    while True:
-        user_selection = input(f"Select one of: {args} : ").strip()
-        if user_selection in args:
-            return user_selection
-        else:
-            print(f'{user_selection} not found.')
-            continue
+  Returns:
+      str: The selected option that matches one of the provided arguments.
+  """
+  while True:
+    user_selection = input(f"Select one of: {args} : ").strip()
+    if user_selection in args:
+      return user_selection
+    else:
+      print(f'{user_selection} not found.')
+      continue
 
 
 if __name__ == '__main__':
-    pass
-
+  user_selection = menu('a', 'b', 'c')
+  print(f'You selected: {user_selection}')
