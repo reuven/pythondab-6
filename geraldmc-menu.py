@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+import sys
 import argparse
 
-def menu(*args):
+def menu(args):
   while True:
-    for arg in args:
-     inp = input(f"Select one of: {arg}")
-    if inp in arg:
+    inp = input(f"Select one of: {args}")
+
+    if inp in args:
       print(f'You entered {inp}. Bye!')
-      return None
+      break
+
     else:
       print(f'{inp} not found.')
 
 if __name__ == '__main__':
+  print(f'{sys.argv=}')
+
   parser = argparse.ArgumentParser()
-  parser.add_argument('-s', '--strings', nargs='+', help='Entered strings, e.g. a, b, c')
+  parser.add_argument('-s', '--strings', nargs='+', help='Entered strings, e.g. a b c')
   args = parser.parse_args()
   menu(args.strings)
